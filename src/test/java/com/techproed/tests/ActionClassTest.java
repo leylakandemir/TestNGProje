@@ -11,7 +11,7 @@ import javax.swing.*;
 
 public class ActionClassTest extends TestBase {
     @Test
-    public void sagTiklama(){
+    public void sagTiklama() {
         driver.get("https://the-internet.herokuapp.com/context_menu");
         WebElement element = driver.findElement(By.id("hot-spot"));
         Actions actions = new Actions(driver);
@@ -23,14 +23,15 @@ public class ActionClassTest extends TestBase {
     }
 
     @Test
-    public void ciftTiklama(){
+    public void ciftTiklama() {
         driver.get("http://demo.guru99.com/test/simple_context_menu.html");
         WebElement element = driver.findElement(By.xpath("//button[@ondblclick='myFunction()']"));
         Actions actions = new Actions(driver);
         actions.doubleClick(element).perform();
     }
+
     @Test
-    public void hoverOver(){
+    public void hoverOver() {
         driver.get("http://www.amazon.com");
         WebElement element = driver.findElement(By.id("nav-link-accountList"));
         Actions actions = new Actions(driver);
@@ -38,7 +39,7 @@ public class ActionClassTest extends TestBase {
     }
 
     @Test
-    public void asagiYukari(){
+    public void asagiYukari() {
         driver.get("http://www.amazon.com");
         Actions actions = new Actions(driver);
         actions.sendKeys(Keys.PAGE_DOWN).perform();
@@ -69,4 +70,48 @@ public class ActionClassTest extends TestBase {
         }
         actions.sendKeys(Keys.ARROW_DOWN).perform();
     }
-}
+
+    @Test
+    public void buyukKucukYazma() {
+        driver.get("http:/google.com");
+        WebElement aramaKutusu = driver.findElement(By.name("q"));
+        //aramaKutusu.sendKeys(Keys.SHIFT+"merhaba nasilsiniz live channel");
+        Actions actions = new Actions(driver);
+        aramaKutusu.sendKeys(Keys.SHIFT + "ben leyla ");
+        actions.keyUp(Keys.SHIFT).sendKeys("sen ").perform();
+        actions.keyDown(Keys.SHIFT).sendKeys("kimsin ").perform();
+    }
+
+    @Test
+    public void dragAndDrop() {
+        driver.get("http:/google.com");
+        WebElement aramaKutusu = driver.findElement(By.name("q"));
+        WebElement logo = driver.findElement(By.id("hplogo"));
+
+        Actions actions = new Actions(driver);
+        actions.dragAndDrop(logo, aramaKutusu).perform();
+    }
+
+        @Test
+        public void deneme () {
+            driver.get("http:/google.com");
+            WebElement aramaKutusu2 = driver.findElement(By.name("q"));
+
+            Actions action = new Actions(driver);
+            action.keyDown(Keys.SHIFT)
+                    .sendKeys("merhaba")
+                    .keyUp(Keys.SHIFT)
+                    .sendKeys(" nasilsiniz")
+                    .perform();
+
+        }
+    }
+
+
+
+
+
+
+
+
+

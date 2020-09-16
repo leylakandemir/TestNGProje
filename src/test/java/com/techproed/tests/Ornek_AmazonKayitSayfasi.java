@@ -26,9 +26,9 @@ public class Ornek_AmazonKayitSayfasi  extends TestBase {
         WebElement name = driver.findElement(By.id("ap_customer_name"));
         name.sendKeys("Leyla KANDEMIR");
         driver.findElement(By.id("ap_email")).sendKeys("leylakandemir00@gmail.com");
-        driver.findElement(By.id("ap_password")).sendKeys("L162208K");
+        driver.findElement(By.id("ap_password")).sendKeys("L16220825K");
 
-        driver.findElement(By.id("ap_password_check")).sendKeys("L162208K");
+        driver.findElement(By.id("ap_password_check")).sendKeys("L16220825K");
         driver.findElement(By.id("continue")).submit();
 
     }
