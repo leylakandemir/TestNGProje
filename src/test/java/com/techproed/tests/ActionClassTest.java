@@ -5,6 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import javax.swing.*;
@@ -75,7 +78,8 @@ public class ActionClassTest extends TestBase {
     public void buyukKucukYazma() {
         driver.get("http:/google.com");
         WebElement aramaKutusu = driver.findElement(By.name("q"));
-        //aramaKutusu.sendKeys(Keys.SHIFT+"merhaba nasilsiniz live channel");
+
+        aramaKutusu.sendKeys(Keys.SHIFT+"merhaba nasilsiniz live channel");
         Actions actions = new Actions(driver);
         aramaKutusu.sendKeys(Keys.SHIFT + "ben leyla ");
         actions.keyUp(Keys.SHIFT).sendKeys("sen ").perform();
