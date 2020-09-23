@@ -17,7 +17,7 @@ public class FhcTripHotelCreateTest extends TestBase {
         password.sendKeys("Man1ager2!");
         driver.findElement(By.xpath("//button[@type='submit']")).click();
     }
-        @Test
+        @Test (groups = "fhctrip")
         public void test () {
             girisTest();
             driver.get("http://fhctrip-qa.com/admin/HotelAdmin/Create");
